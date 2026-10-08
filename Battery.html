@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "uft-8">
+        	<meta name="description" content="Pit Tracker Repairs">
+		<meta name="keywords" content="Checklist">
+		<meta name="author" content="Gridrunners">
+		<meta name="copyright" content="10011Gridrunners">
+		<meta name="rating" content="general">
+		<link rel="stylesheet" href="CSS/style.css">
+        <title> GridRunners </title>
+
+        <link rel="stylesheet" href = "style.css">
+
+        			<div class="sticky">
+				<nav class="menu-area">
+					<ul>
+						<li><a href="Battery.html">Batteries</a></li>
+	
+						<li><a href="Repair.html">Repair List</a>
+				</li>
+				<li><a href="Queues.html">Match Queue</a>
+
+									
+				</nav>
+			</div>
+
+    </head>
+
+    <Body>
+        <section id="main-content"> 
+            <div id="gridLogo">
+			<img src="Photos/Logo-FINAL-Full-transparent.png" width="167px" height="130px">
+		    </div>
+            <h1>Pit Tracking Status</h1>
+        </section>
+
+        <section id = "battery">
+        <h2>Battery Check</h2>
+        </section>
+`       
+        <section id = "batteries">
+
+        <table border="1">
+        <tbody>
+
+        <tr>
+        <th>Battery</th>
+        <th>Charge (v)</th>
+        <th>Timed Updated</th>
+        </tr>
+
+        <tr>
+        <th>Joltik</th>
+        <td contenteditable="true">#</td>
+        <td contenteditable="true">1:00</td>
+        </tr>
+
+        <tr>
+        <th>Shinx</th>
+        <td contenteditable="true">#</td>
+        <td contenteditable="true">1:00</td>
+        </tr>
+
+        <tr>
+        <th>Rotom</th>
+        <td contenteditable="true">#</td>
+        <td contenteditable="true">1:00</td>
+        </tr>
+
+        <tr>
+        <th>Ampharos</th>
+        <td contenteditable="true">#</td>
+        <td contenteditable="true">1:00</td>
+        </tr>
+
+        <tr>
+        <th>Electabuzz</th>
+        <td contenteditable="true">#</td>
+        <td contenteditable="true">1:00</td>
+        </tr>
+
+        <tr>
+        <th>Pawmi</th>
+        <td contenteditable="true">#</td>
+        <td contenteditable="true">1:00</td>
+        </tr>
+
+        </tbody>
+        </table>
+
+        <script>
+        document.querySelectorAll('td').forEach(cell => {
+        cell.addEventListener('blur', function() {
+        console.log('Updated:', this.textContent);
+        });
+        });
+        </script>
+
+        <script>
+        document.getElementById('batteries')
+        .addEventListener('keydown', function (e){
+        if (e.key === 'Enter') {
+        e.preventDefault();
+        return contenteditable = "false"; }
+        });
+        </script> 
+
+        </section>
+
+
+
+    </Body>
+
+
+</html>
