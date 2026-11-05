@@ -51,44 +51,62 @@
         <th>Timed Updated</th>
         </tr>
 
+        <script>
+        const editableDiv = document.getElementById('contenteditableDiv');
+        editableDiv.focus();
+        </script>
+
         <tr>
         <th>Joltik</th>
-        <td contenteditable="true">#</td>
-        <td contenteditable="true">1:00</td>
+        <td id="editable" contenteditable="true">#</td>
+        <th contenteditable="true">1:00</th>
         </tr>
 
         <tr>
         <th>Shinx</th>
-        <td contenteditable="true">#</td>
-        <td contenteditable="true">1:00</td>
+        <td <div id="editable" contenteditable="true">#</div></td>
+        <th contenteditable="true">1:00</th>
         </tr>
 
         <tr>
         <th>Rotom</th>
-        <td contenteditable="true">#</td>
-        <td contenteditable="true">1:00</td>
+        <td <div id="editable" contenteditable="true">#</div></td>
+        <th contenteditable="true">1:00</th>
         </tr>
 
         <tr>
         <th>Ampharos</th>
-        <td contenteditable="true">#</td>
-        <td contenteditable="true">1:00</td>
+        <td <div id="editable" contenteditable="true">#</div></td>
+        <th contenteditable="true">1:00</th>
         </tr>
 
         <tr>
         <th>Electabuzz</th>
-        <td contenteditable="true">#</td>
-        <td contenteditable="true">1:00</td>
+        <td <div id="editable" contenteditable="true">#</div></td>
+        <th contenteditable="true">1:00</th>
         </tr>
 
         <tr>
         <th>Pawmi</th>
-        <td contenteditable="true">#</td>
-        <td contenteditable="true">1:00</td>
+        <td <div id="editable" contenteditable="true">#</div></td>
+        <th contenteditable="true">1:00</th>
         </tr>
 
         </tbody>
         </table>
+
+        //change table color
+
+        <script>
+        document.querySelectorAll('td').forEach(td => {
+        if (parseFloat(td.innerText) < 5) td.classList.add('low');
+        else td.classList.add('high');
+        });
+        </script>
+        <style>
+        .low { background-color: red; }
+        .high { background-color: green; }
+        </style>
 
         <script>
         document.querySelectorAll('td').forEach(cell => {
@@ -98,14 +116,16 @@
         });
         </script>
 
+        //stop text editing
         <script>
-        document.getElementById('batteries')
-        .addEventListener('keydown', function (e){
+        document.getElementById('editable').addEventListener('keydown', function (e){
         if (e.key === 'Enter') {
-        e.preventDefault();
-        return contenteditable = "false"; }
+        event.preventDefault();
+        }
         });
         </script> 
+
+        
 
         </section>
 
