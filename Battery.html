@@ -58,37 +58,37 @@
 
         <tr>
         <th>Joltik</th>
-        <td id="editable" contenteditable="true">#</td>
+        <td input type = "number" id="editable" contenteditable="true">6</td>
         <th contenteditable="true">1:00</th>
         </tr>
 
         <tr>
         <th>Shinx</th>
-        <td <div id="editable" contenteditable="true">#</div></td>
+        <td div id="editable" contenteditable="true">#</div></td>
         <th contenteditable="true">1:00</th>
         </tr>
 
         <tr>
         <th>Rotom</th>
-        <td <div id="editable" contenteditable="true">#</div></td>
+        <td  id="editable" contenteditable="true">6</div></td>
         <th contenteditable="true">1:00</th>
         </tr>
 
         <tr>
         <th>Ampharos</th>
-        <td <div id="editable" contenteditable="true">#</div></td>
+        <td id="editable" contenteditable="true">#</div></td>
         <th contenteditable="true">1:00</th>
         </tr>
 
         <tr>
         <th>Electabuzz</th>
-        <td <div id="editable" contenteditable="true">#</div></td>
+        <td id="editable" contenteditable="true">#</div></td>
         <th contenteditable="true">1:00</th>
         </tr>
 
         <tr>
         <th>Pawmi</th>
-        <td <div id="editable" contenteditable="true">#</div></td>
+        <td id="editable" contenteditable="true">#</div></td>
         <th contenteditable="true">1:00</th>
         </tr>
 
@@ -99,14 +99,29 @@
 
         <script>
         document.querySelectorAll('td').forEach(td => {
-        if (parseFloat(td.innerText) < 5) td.classList.add('low');
-        else td.classList.add('high');
+        if (parseFloat(td.innerText) < 5) {
+            td.classList.add('low');
+        }
+        else if (parseFloat(td.innerText) > 5){
+         td.classList.add('high');
+        }
+        else{
+            td.classList.add('low');
+        }
         });
         </script>
         <style>
         .low { background-color: red; }
         .high { background-color: green; }
         </style>
+
+        <!-- <script>
+        document.getElementById('td').forEach(cell => {
+        cell.addEventListener('input', function() {
+        console.log('Updated:', this.);
+        });
+        });
+        </script> -->
 
         <script>
         document.querySelectorAll('td').forEach(cell => {
