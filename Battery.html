@@ -57,9 +57,23 @@
         </script>
 
         <tr>
+        <th>Battery testing</th>
+        <!-- <td input type = "number" id="editable" contenteditable="true">6</td> -->
+         <th>        <input type="text" id="textInput" placeholder="Volts">
+</th>
+
+
+        
+        <!-- <th id="clock" >1:00</th> -->
+         <th><input type="time" id="timeInput"></th>
+        
+        </tr>
+
+    <!--------------------------------------------------------->
+        <tr>
         <th>Joltik</th>
         <td input type = "number" id="editable" contenteditable="true">6</td>
-        <th contenteditable="true">1:00</th>
+        <th id="clock" >1:00</th>
         </tr>
 
         <tr>
@@ -95,7 +109,7 @@
         </tbody>
         </table>
 
-        //change table color
+        <!-- change table color -->
 
         <script>
         document.querySelectorAll('td').forEach(td => {
@@ -131,7 +145,7 @@
         });
         </script>
 
-        //stop text editing
+        <!-- stop text editing -->
         <script>
         document.getElementById('editable').addEventListener('keydown', function (e){
         if (e.key === 'Enter') {
@@ -140,11 +154,21 @@
         });
         </script> 
 
-        
+<!-- Code for updating the clock anytime an input is changed -->
+    <script>
+        const textInput = document.getElementById('textInput');
+        const timeInput = document.getElementById('timeInput');
 
-        </section>
+        textInput.addEventListener('input', () => {
+            const now = new Date();
+            // Format time as HH:mm in 24-hour format required by <input type="time">
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            timeInput.value = `${hours}:${minutes}`;
+        });
+    </script>
 
-
+   </section> 
 
     </Body>
 
